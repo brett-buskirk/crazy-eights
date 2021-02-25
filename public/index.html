@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Crazy Eights</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/jquery-ui.min.css">
+  <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/main.css">
+</head>
+
+<body>
+  <main id="contents">
+    <div id="hand-computer" class="zone">
+      <div id="card-1" class="card nodrag" data-card="CB"></div>
+      <div id="card-2" class="card nodrag" data-card="CB"></div>
+      <div id="card-3" class="card nodrag" data-card="CB"></div>
+      <div id="card-4" class="card nodrag" data-card="CB"></div>
+      <div id="card-5" class="card nodrag" data-card="CB"></div>
+    </div>
+    <br>
+    <div id="play-area" class="zone">
+      <div id="deck">
+        <div id="card-12" class="card nodrag" data-card="CB"></div>
+        <div id="card-13" class="card nodrag" data-card="CB"></div>
+        <div id="card-14" class="card nodrag" data-card="CB"></div>
+        <div id="card-15" class="card nodrag" data-card="CB"></div>
+        <div id="card-16" class="card nodrag" data-card="CB"></div>
+        <div id="card-17" class="card nodrag" data-card="CB"></div>
+        <div id="card-18" class="card nodrag" data-card="CB"></div>
+        <div id="card-19" class="card nodrag" data-card="CB"></div>
+        <div id="card-20" class="card nodrag" data-card="CB"></div>
+        <div id="card-21" class="card nodrag" data-card="CB"></div>
+        <div id="card-22" class="card nodrag" data-card="CB"></div>
+        <div id="card-23" class="card nodrag" data-card="CB"></div>
+        <div id="card-24" class="card nodrag" data-card="CB"></div>
+        <div id="card-25" class="card nodrag" data-card="CB"></div>
+        <div id="card-26" class="card nodrag" data-card="CB"></div>
+        <div id="card-27" class="card nodrag" data-card="CB"></div>
+        <div id="card-28" class="card nodrag" data-card="CB"></div>
+        <div id="card-29" class="card nodrag" data-card="CB"></div>
+        <div id="card-30" class="card nodrag" data-card="CB"></div>
+        <div id="card-31" class="card nodrag" data-card="CB"></div>
+        <div id="card-32" class="card nodrag" data-card="CB"></div>
+        <div id="card-33" class="card nodrag" data-card="CB"></div>
+        <div id="card-34" class="card nodrag" data-card="CB"></div>
+        <div id="card-35" class="card nodrag" data-card="CB"></div>
+        <div id="card-36" class="card nodrag" data-card="CB"></div>
+        <div id="card-37" class="card nodrag" data-card="CB"></div>
+        <div id="card-38" class="card nodrag" data-card="CB"></div>
+        <div id="card-39" class="card nodrag" data-card="CB"></div>
+        <div id="card-40" class="card nodrag" data-card="CB"></div>
+        <div id="card-41" class="card nodrag" data-card="CB"></div>
+        <div id="card-42" class="card nodrag" data-card="CB"></div>
+        <div id="card-43" class="card nodrag" data-card="CB"></div>
+        <div id="card-44" class="card nodrag" data-card="CB"></div>
+        <div id="card-45" class="card nodrag" data-card="CB"></div>
+        <div id="card-46" class="card nodrag" data-card="CB"></div>
+        <div id="card-47" class="card nodrag" data-card="CB"></div>
+        <div id="card-48" class="card nodrag" data-card="CB"></div>
+        <div id="card-49" class="card nodrag" data-card="CB"></div>
+        <div id="card-50" class="card nodrag" data-card="CB"></div>
+        <div id="card-51" class="card nodrag" data-card="CB"></div>
+        <div id="card-52" class="card nodrag" data-card="CB"></div>
+      </div>
+
+      <h1 id="active-suit"></h1>
+    
+      <div id="discard">
+        <div id="card-11" class="card nodrag" data-card=""></div>
+      </div>
+
+      <div id="select-suit">
+        <h1>Select a suit:</h1>
+        <h2 class="suit" id="Spades">♠️</h2>
+        <h2 class="suit" id="Hearts">♥️</h2>
+        <h2 class="suit" id="Diamonds">♦️</h2>
+        <h2 class="suit" id="Clubs">♣️</h2>
+      </div>
+    </div>
+    <br>
+    <div id="hand-player" class="zone">
+        <div id="card-6" class="card front" data-card=""></div>
+        <div id="card-7" class="card front" data-card=""></div>
+        <div id="card-8" class="card front" data-card=""></div>
+        <div id="card-9" class="card front" data-card=""></div>
+        <div id="card-10" class="card front" data-card=""></div>
+    </div>
+  </main>
+
+  <div id="game-over">
+    <h1>GAME OVER!</h1>
+    <h2></h2>
+    <h3>POINTS GAINED</h3>
+    <p>Player: <span id="play-points">0</span></p>
+    <p>Computer: <span id="comp-points">0</span></p>
+    <h3>TOTALS</h3>
+    <table>
+      <thead>
+        <tr>
+          <th></th>
+          <th>Player </th>
+          <th>Computer</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>Wins</th>
+          <td id="p-wins">0</td>
+          <td id="c-wins">0</td>
+        </tr>
+        <tr>
+          <th>Losses</th>
+          <td id="p-losses">0</td>
+          <td id="c-losses">0</td>
+        </tr>
+        <tr>
+          <th>Points</th>
+          <td id="p-points">0</td>
+          <td id="c-points">0</td>
+        </tr>
+      </tbody>
+    </table>
+    <button type="button" id="continue">CONTINUE</button>
+  </div>
+  
+  <script src="javascripts/jquery.js"></script>
+  <script src="javascripts/jquery-ui.min.js"></script>
+  <script src="javascripts/main.js"></script>
+  <script src="javascripts/logic.js"></script>
+</body>
+</html>
